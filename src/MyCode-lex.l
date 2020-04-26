@@ -17,6 +17,16 @@ Characters [a-zA-Z]
 "-"     { printf(">> Line %d < token %s :: Operador de subtracao >\n", line, yytext); }
 "*"     { printf(">> Line %d < token %s :: Operador de multiplicacao >\n", line, yytext); }
 "/"     { printf(">> Line %d < token %s :: Operador de divisao >\n", line, yytext); }
+"{"     { printf(">> Line %d < token %s :: Abre bloco de codigo >\n", line, yytext); }
+"}"     { printf(">> Line %d < token %s :: Fecha bloco de codigo >\n", line, yytext); }
+"["     { printf(">> Line %d < token %s :: Abre bloco de codigo >\n", line, yytext); }
+"]"     { printf(">> Line %d < token %s :: Fecha bloco de codigo >\n", line, yytext); }
+"("     { printf(">> Line %d < token %s :: Abre bloco de codigo >\n", line, yytext); }
+")"     { printf(">> Line %d < token %s :: Fecha bloco de codigo >\n", line, yytext); }
+":"     { printf(">> Line %d < token %s :: Dois pontos >\n", line, yytext); }
+"="     { printf(">> Line %d < token %s :: Atribui valor >\n", line, yytext); }
+">"     { printf(">> Line %d < token %s :: Comparador de desigualdade >\n", line, yytext); }
+"<"     { printf(">> Line %d < token %s :: Comparador de desigualdade >\n", line, yytext); }
 
 for     { printf(">> Line %d < reserved %s :: Laco de repeticao >\n", line, yytext); }
 if      { printf(">> Line %d < reserved %s :: Condicao SE >\n", line, yytext); }
@@ -32,7 +42,6 @@ float   { printf(">> Line %d < reserved %s :: Define o tipo de uma variavel >\n"
 long    { printf(">> Line %d < reserved %s :: Define o tipo de uma variavel >\n", line, yytext); }
 double  { printf(">> Line %d < reserved %s :: Define o tipo de uma variavel >\n", line, yytext); }
 return  { printf(">> Line %d < reserved %s :: Retorna um valor dentro de uma funcao >\n", line, yytext); }
-
 %%
 
 int yywrap();
