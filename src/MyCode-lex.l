@@ -2,39 +2,25 @@
     #include <stdio.h>
     #include <string.h>
     #include <math.h>
+
+    int line = 1;
 %}
 
 Numbers [0-9]
 Characters [a-zA-Z]
 
 %%
+[\n] { line++; }
 
-";" {
-    printf("Finalizar comando: %s\n",yytext);
-}
-"+" {
-    printf("Operador de soma: %s\n",yytext);
-}
-"-" {
-    printf("Operador de subtracao: %s\n",yytext);
-}
-"*" {
-    printf("Operador de multiplicacao: %s\n",yytext);
-}
-"/" {
-    printf("Operador de divisao: %s\n",yytext);
-}
+";"     { printf(">> Line %d < token %s :: Final de comando >\n", line, yytext); }
+"+"     { printf(">> Line %d < token %s :: Operador de soma >\n", line, yytext); }
+"-"     { printf(">> Line %d < token %s :: Operador de subtracao >\n", line, yytext); }
+"*"     { printf(">> Line %d < token %s :: Operador de multiplicacao >\n", line, yytext); }
+"/"     { printf(">> Line %d < token %s :: Operador de divisao >\n", line, yytext); }
 
-for {
-    printf("Laco de repeticao: %s\n",yytext);
-}
-if {
-    printf("Condicao SE: %s\n",yytext);
-}
-else {
-    printf("Condicao SE NAO: %s\n",yytext);
-}
-
+for     { printf(">> Line %d < reserved %s :: Laco de repeticao >\n", line, yytext); }
+if      { printf(">> Line %d < reserved %s :: Condicao SE >\n", line, yytext); }
+else    { printf(">> Line %d < reserved %s :: Condicao SE NAO >\n", line, yytext); }
 %%
 
 int yywrap();
