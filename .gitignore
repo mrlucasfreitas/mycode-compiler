@@ -1,4 +1,4 @@
 lex.yy.c
 a.out
-lib/lex.yy.c
-lib/a.out
+src/lex.yy.c
+src/a.out
