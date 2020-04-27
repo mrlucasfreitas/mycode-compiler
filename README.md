@@ -7,7 +7,7 @@ Bem vindo ao MyCode Compiler, um projeto para mostrar como os compiladores funci
 A linguagem utilizada para fazer este interpretador é a **C**, por conta da sintaxe simples e comum, facilidade de implementação e disponibilidade do Flex para a mesma.
 
 ## Ferramentas
-A ferramenta escolhida foi o Flex (Fast Lexical Analyzer Generator), por sua do uso e velocidade.
+A ferramenta escolhida foi o Flex (Fast Lexical Analyzer Generator), por conta do seu uso e velocidade.
 
 ## Instalação
 After installing homebrew.
