@@ -129,6 +129,8 @@ Inválidos = ``` . | " | ' | ` | ´ | ~ | @ | # ```
 | =	| t_atribuicao |
 | >	| t_maiorque |
 | <	| t_menorque |
+| || | t_ou |
+| && | t_e |
 | for | t_forloop |
 | if | t_condicaose |
 | else | t_condicaosenao |
