@@ -4,11 +4,9 @@
 Bem vindo ao MyCode Compiler, um projeto para mostrar como os compiladores funcionam.
 
 ## Linguagem
-
 A linguagem utilizada para fazer este interpretador é a **C**, por conta da sintaxe simples e comum, facilidade de implementação e disponibilidade do Flex para a mesma.
 
 ## Ferramentas
-
 A ferramenta escolhida foi o Flex (Fast Lexical Analyzer Generator), por sua do uso e velocidade.
 
 ## Instalação
@@ -78,9 +76,30 @@ $ apt install flex gcc
 6. Inserir a gramática a ser reconhecida
 
 ### Exemplos de uso
+Saídas geradas:
+```sh
+➜  mycode-compiler git:(master) make exec                    
+22 * 44
+>> Line 1 << Character 1 < NUMBER 22 _Numero inteiro_>
+>> Line 1 << Character null < WHITESPACE _Espaco em branco_>
+>> Line 1 << Character 2 < TOKEN * _Operador de multiplicacao_>
+>> Line 1 << Character null < WHITESPACE _Espaco em branco_>
+>> Line 1 << Character 3 < NUMBER 44 _Numero inteiro_>
+$teste1 = 7
+>> Line 2 << Character 1 < VARIABLE $teste1 _Nome da variavel_>
+>> Line 2 << Character null < WHITESPACE _Espaco em branco_>
+>> Line 2 << Character 2 < TOKEN = _Atribui valor_>
+>> Line 2 << Character null < WHITESPACE _Espaco em branco_>
+>> Line 2 << Character 3 < NUMBER 7 _Numero inteiro_>
+  
+>> Line null << Character null < EMPTY LINE _Linha em brando >
+//este eh um comentario
+>> Line null << Character null < COMMENT LINE _Linha de comentario_>
+@
+>> Line 3 ERROR << Character 1 < INVALID @ _Caractere invalido_>
+```
 
 ### Gramática suportada
-
 Númericos = ``` 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ```
 
 Caracteres = ``` a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z ```
