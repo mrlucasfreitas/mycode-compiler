@@ -35,7 +35,7 @@ ID ({Characters}|_)+({Characters}|{Numbers}|_)*
 "="     { printf(">> Line %d << Character %d < TOKEN %s _Atribui valor_>\n", line, character++, yytext); }
 ">"     { printf(">> Line %d << Character %d < TOKEN %s _Comparador de desigualdade_>\n", line, character++, yytext); }
 "<"     { printf(">> Line %d << Character %d < TOKEN %s _Comparador de desigualdade_>\n", line, character++, yytext); }
-"||"    { printf(">> Line %d << Character %d < TOKEN %s _Conjuncao logica OR_>\n", line, character++, yytext); }
+"||"    { printf(">> Line %d << Character %d < TOKEN %s _Conjuncao logica OU_>\n", line, character++, yytext); }
 "&&"    { printf(">> Line %d << Character %d < TOKEN %s _Conjuncao logica E_>\n", line, character++, yytext); }
 
 for     { printf(">> Line %d << Character %d < RESERVED %s _Laco de repeticao_>\n", line, character++, yytext); }
