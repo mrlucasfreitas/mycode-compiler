@@ -1,22 +1,30 @@
-# MyCode Compiler
+# **MyCode Compiler**
 > Always in branch Master.
 
 Bem vindo ao MyCode Compiler, um projeto para mostrar como os compiladores funcionam.
 
-## Linguagem
+## **Linguagem**
 
 A linguagem utilizada para fazer este interpretador é a **C**, por conta da sintaxe simples e comum, facilidade de implementação e disponibilidade do Flex para a mesma.
 
-## Ferramentas
+## **Ferramentas**
 
 A ferramenta escolhida foi o Flex (Fast Lexical Analyzer Generator), por sua do uso e velocidade.
 
-## Instalação
-### MAC
+## **Instalação**
+After installing homebrew.
+```sh
+$ brew cask install flex
+```
+Importante: O GCC já está vindo por padrão no MAC.
 
 ### Linux
+```sh
+$ apt update
+$ apt install flex gcc
+```
 
-## Interpretador léxico
+## **Interpretador léxico**
 ### Este interpretador possui as seguintes características
 * Mostrar os componentes léxicos;
 * Identificar variáveis, strings, inteiros e etc;
@@ -112,7 +120,7 @@ Inválidos = ``` . | " | ' | ` | ´ | ~ | @ | # ```
 | double | t_typedouble |
 | return | t_retornaval |
 
-## Informações adicionais
+## **Informações adicionais**
 Trabalho realizado para a disciplina de compiladores.
 
 Turma de Engenharia de Computação.
@@ -122,5 +130,6 @@ FEITEP - Faculdade de Engenharias e Arquitetura
 Para mais informações clique [aqui](http://www.feitep.edu.br/).
 
 ### Alunos
-Lucas Freitas
-Gustavo Ausechi Furlan
+Lucas Freitas | [Github](https://github.com/mrlucasfreitas).
+
+Gustavo Ausechi Furlan |  [Github](https://github.com/SirZexTru).
