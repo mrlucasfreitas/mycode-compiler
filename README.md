@@ -1,17 +1,17 @@
-# **MyCode Compiler**
+# MyCode Compiler
 > Always in branch Master.
 
 Bem vindo ao MyCode Compiler, um projeto para mostrar como os compiladores funcionam.
 
-## **Linguagem**
+## Linguagem
 
 A linguagem utilizada para fazer este interpretador é a **C**, por conta da sintaxe simples e comum, facilidade de implementação e disponibilidade do Flex para a mesma.
 
-## **Ferramentas**
+## Ferramentas
 
 A ferramenta escolhida foi o Flex (Fast Lexical Analyzer Generator), por sua do uso e velocidade.
 
-## **Instalação**
+## Instalação
 After installing homebrew.
 ```sh
 $ brew cask install flex
@@ -24,7 +24,7 @@ $ apt update
 $ apt install flex gcc
 ```
 
-## **Interpretador léxico**
+## Interpretador léxico
 ### Este interpretador possui as seguintes características
 * Mostrar os componentes léxicos;
 * Identificar variáveis, strings, inteiros e etc;
@@ -35,6 +35,8 @@ $ apt install flex gcc
 * Eliminar comentários;
 * Enter vazio não pode contar como linha;
 * Manter o controle de linhas.
+
+---
 
 ### Como executar
 #### Executar de maneira mais automatizada
@@ -80,8 +82,11 @@ $ apt install flex gcc
 ### Gramática suportada
 
 Númericos = ``` 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ```
+
 Caracteres = ``` a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z ```
+
 Símbolos = ``` ; | + | - | * | / | { | } | [ | ] | ( | ) | : | = | > | < ```
+
 Inválidos = ``` . | " | ' | ` | ´ | ~ | @ | # ```
 
 ### Tabela de simbolos
@@ -120,12 +125,12 @@ Inválidos = ``` . | " | ' | ` | ´ | ~ | @ | # ```
 | double | t_typedouble |
 | return | t_retornaval |
 
-## **Informações adicionais**
+## Informações adicionais
 Trabalho realizado para a disciplina de compiladores.
 
 Turma de Engenharia de Computação.
 
-### Intituição
+### Instituição
 FEITEP - Faculdade de Engenharias e Arquitetura
 Para mais informações clique [aqui](http://www.feitep.edu.br/).
 
