@@ -8,14 +8,17 @@
 %}
 
 Numbers [0-9]
-Characters [a-zA-Z0-9]
+Characters [a-zA-Z]
+String [a-zA-Z0-9]
 WhiteSpace [ ]*
 LineWhiteSpace [ ]
+EmptyEnter [ \t\r]
 Comment ({Characters}|{Numbers}|{WhiteSpace})*
 ID ({Characters}|_)+({Characters}|{Numbers}|_)*
 
 %%
-[\n] { line++; character = 1; }
+[\n]+\n { line++; }
+[\n]    { line++; character = 1; }
 
 ";"     { printf(">> Line %d << Character %d < TOKEN %s _Final de comando_>\n", line, character++, yytext); }
 "+"     { printf(">> Line %d << Character %d < TOKEN %s _Operador de soma_>\n", line, character++, yytext); }
@@ -32,6 +35,8 @@ ID ({Characters}|_)+({Characters}|{Numbers}|_)*
 "="     { printf(">> Line %d << Character %d < TOKEN %s _Atribui valor_>\n", line, character++, yytext); }
 ">"     { printf(">> Line %d << Character %d < TOKEN %s _Comparador de desigualdade_>\n", line, character++, yytext); }
 "<"     { printf(">> Line %d << Character %d < TOKEN %s _Comparador de desigualdade_>\n", line, character++, yytext); }
+"||"    { printf(">> Line %d << Character %d < TOKEN %s _Conjuncao logica OR_>\n", line, character++, yytext); }
+"&&"    { printf(">> Line %d << Character %d < TOKEN %s _Conjuncao logica E_>\n", line, character++, yytext); }
 
 for     { printf(">> Line %d << Character %d < RESERVED %s _Laco de repeticao_>\n", line, character++, yytext); }
 if      { printf(">> Line %d << Character %d < RESERVED %s _Condicao SE_>\n", line, character++, yytext); }
@@ -52,8 +57,18 @@ return  { printf(">> Line %d << Character %d < RESERVED %s _Retorna um valor den
 {WhiteSpace}        { printf(">> Line %d << Character null < WHITESPACE _Espaco em branco_>\n", line); }
 {LineWhiteSpace}+\n { printf(">> Line null << Character null < EMPTY LINE _Linha em brando >\n"); }
 {Numbers}+          { printf(">> Line %d << Character %d < NUMBER %s _Numero inteiro_>\n", line, character++, yytext); }
-\"{Characters}+\"   { printf(">> Line %d << Character %d < STRING %s _Palavra ou frase_>\n", line, character++, yytext); }
+\"{String}+\"       { printf(">> Line %d << Character %d < STRING %s _Palavra ou frase_>\n", line, character++, yytext); }
 ${ID}               { printf(">> Line %d << Character %d < VARIABLE %s _Nome da variavel_>\n", line, character++, yytext); }
+
+"\""                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"'"                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"`"                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"´"                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"~"                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"#"                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"@"                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+"."                 { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
+{Characters}+       { printf(">> Line %d ERROR << Character %d < INVALID %s _Caractere invalido_>\n", line, character++, yytext); }
 %%
 
 int yywrap();
